@@ -180,9 +180,9 @@ def f_beta(precision, recall, beta = 1):
 
 f1 = lambda precision, recall: f_beta(precision, recall, beta = 1)
 
-gold_flag = sys.argv[1] #"old"
-in_path = sys.argv[2] #"../../data/other_systems/props_test.txt"
-out_path = sys.argv[3] #"result.dat"
+gold_flag = sys.argv[1] # to choose whether to use OIE2016 or Re-OIE2016
+in_path = sys.argv[2] # input file
+out_path = sys.argv[3] # output file
 
 if __name__ == '__main__':
     
@@ -191,9 +191,9 @@ if __name__ == '__main__':
     error_fn = "error.txt"
         
     if gold == "old":
-        gold_fn = "../../data/test.oie"
+        gold_fn = "OIE2016.txt"
     else:
-        gold_fn = "../../data/labeled_596_v2.json"
+        gold_fn = "Re-OIE2016.json"
     
     b = Benchmark(gold_fn) 
     s_fn = in_path
